@@ -2,6 +2,7 @@ package data_structures;
 
 /**
  * Interfaz genérica para dispersores.
+ * Principalmente esta diseñada para usarse con lambdas.
  */
 @FunctionalInterface
 public interface Dispersor<T> {
