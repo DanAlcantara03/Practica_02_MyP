@@ -10,8 +10,6 @@ public class Dispersores {
     
     /**
     * Función de dispersión XOR.
-    * Esta función de dispersión no es tan recomendable de usar
-    * yq que es muy facil encontrar una colisión en esta.
     * @param llave la llave a dispersar.
     * @return la dispersión de XOR de la llave.
     */
