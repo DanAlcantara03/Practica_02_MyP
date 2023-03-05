@@ -3,7 +3,8 @@ package robot.estados;
 import robot.Robot;
 
 /**
- * 
+ * Clase que nos ayuda a representar el estado de un robot si llega
+ * a estar en modo suspendido.
  */
 public class ModoSuspendido implements EstadoRobot{
     
@@ -18,27 +19,4 @@ public class ModoSuspendido implements EstadoRobot{
         this.robot = robot;
     }
 
-    /**
-     * 
-     */
-    public void activar(){
-
-    }
-
-
-    public void caminar(){
-
-    }
-
-    public void atenderCliente(){
-
-    }
-
-    public void cocinar(){
-
-    }
-
-    public void suspender(){
-        
-    }
 }

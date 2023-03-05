@@ -1,4 +1,4 @@
-package data_structures;
+package robot.menus;
 
 /**
  * Interfaz genérica para dispersores.
