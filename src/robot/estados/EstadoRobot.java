@@ -45,7 +45,7 @@ public interface EstadoRobot{
     /**
      * Metodo auxiliar que nos ayuda a simular que el robot esta cocinando un platillo,
      * esto lo va a hacer mostrandole al cliente todo el proceso que se sigue al crear 
-     * dicho platillo
+     * dicho platillo.
      * 
      * 
      */

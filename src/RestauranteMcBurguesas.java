@@ -5,6 +5,10 @@
  */
 public class RestauranteMcBurguesas{
 
+    public static boolean esPar(int n){
+        return n % 2 == 0;
+    }
+
     public static void main( String [] args ){
         
     }

@@ -90,8 +90,7 @@ public class HashTable<K, V> implements Iterable<V> {
     }
     
     /* Clase interna privada para iteradores de llaves. */
-    private class IteradorLlaves extends Iterador
-    implements Iterator<K> {
+    private class IteradorLlaves extends Iterador implements Iterator<K> {
         
         /* Regresa el siguiente elemento. */
         @Override public K next() {
@@ -100,8 +99,7 @@ public class HashTable<K, V> implements Iterable<V> {
     }
     
     /* Clase interna privada para iteradores de valores. */
-    private class IteradorValores extends Iterador
-    implements Iterator<V> {
+    private class IteradorValores extends Iterador implements Iterator<V> {
         
         /* Regresa el siguiente elemento. */
         @Override public V next() {
@@ -110,7 +108,7 @@ public class HashTable<K, V> implements Iterable<V> {
     }
     
     /** Máxima carga permitida por el HashTable. */
-    public static final double MAXIMA_CARGA = 0.72;
+    private static final double MAXIMA_CARGA = 0.72;
     
     /* Capacidad mínima; decidida arbitrariamente a 2^6. */
     private static final int MINIMA_CAPACIDAD = 64;
@@ -131,8 +129,7 @@ public class HashTable<K, V> implements Iterable<V> {
     }
     
     /**
-    * Construye un HashTable con una capacidad inicial y dispersor
-    * predeterminados.
+    * Construye un HashTable con una capacidad inicial y dispersor predeterminados.
     */
     public HashTable() {
         this(MINIMA_CAPACIDAD, (K llave) -> llave.hashCode());
@@ -171,9 +168,9 @@ public class HashTable<K, V> implements Iterable<V> {
     }
 
     /**
-     * Agrega un nuevo valor al HashTable, usando la llave proporcionada. Si
-     * la llave ya había sido utilizada antes para agregar un valor, el
-     * HashTable reemplaza ese valor con el recibido aquí.
+     * Agrega un nuevo valor al HashTable, usando la llave proporcionada. Si la 
+     * llave ya había sido utilizada antes para agregar un valor, el HashTable
+     * reemplaza ese valor con el recibido aquí.
      * @param llave la llave para agregar el valor.
      * @param valor el valor a agregar.
      * @throws IllegalArgumentException si la llave o el valor son nulos.
@@ -200,7 +197,7 @@ public class HashTable<K, V> implements Iterable<V> {
             }
         }        
         if(MAXIMA_CARGA <= carga())
-            rehacerArreglo();        
+            rehacerArreglo();
     }
 
     /**
@@ -356,15 +353,13 @@ public class HashTable<K, V> implements Iterable<V> {
     /**
      * Nos dice si el HashTable es igual al objeto recibido.
      * @param o el objeto que queremos saber si es igual al HashTable.
-     * @return <code>true</code> si el objeto recibido es instancia de
-     *         HashTable, y tiene las mismas llaves asociadas a los mismos
-     *         valores.
+     * @return <code>true</code> si el objeto recibido es instancia de HashTable, y
+     * tiene las mismas llaves asociadas a los mismos valores.
      */
     @Override public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass())
             return false;
-        @SuppressWarnings("unchecked") HashTable<K, V> d =
-            (HashTable<K, V>)o;
+        @SuppressWarnings("unchecked") HashTable<K, V> d = (HashTable<K, V>)o;
         if(elementos == d.elementos){
             for(int i = 0; i < entradas.length; i++){
                 if(entradas[i] != null){
@@ -387,8 +382,8 @@ public class HashTable<K, V> implements Iterable<V> {
     }
 
     /**
-     * Regresa un iterador para iterar las llaves del HashTable. El
-     * HashTable se itera sin ningún orden específico.
+     * Regresa un iterador para iterar las llaves del HashTable. El HashTable se 
+     * itera sin ningún orden específico.
      * @return un iterador para iterar las llaves del HashTable.
      */
     public Iterator<K> iteradorLlaves() {
@@ -396,8 +391,8 @@ public class HashTable<K, V> implements Iterable<V> {
     }
 
     /**
-     * Regresa un iterador para iterar los valores del HashTable. El
-     * HashTable se itera sin ningún orden específico.
+     * Regresa un iterador para iterar los valores del HashTable. El HashTable se
+     * itera sin ningún orden específico.
      * @return un iterador para iterar los valores del HashTable.
      */
     @Override public Iterator<V> iterator() {
@@ -432,7 +427,7 @@ public class HashTable<K, V> implements Iterable<V> {
             if(temp[i] != null){
                 for(Entrada a: temp[i]){
                     agrega(a.llave,a.valor);
-                }                
+                }
             }
         }
     }

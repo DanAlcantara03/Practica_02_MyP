@@ -20,6 +20,7 @@ public class Robot{
      * Constructor que inicializa al robot 
      */
     public Robot(){
-
+        
     }
+
 }
