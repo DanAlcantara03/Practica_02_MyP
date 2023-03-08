@@ -23,4 +23,11 @@ public class Robot{
         
     }
 
+
+    public String robotOpciones(){
+        String menu = "";
+        menu += "01.- Activar Robot";
+        menu += "02.- "
+        return menu;
+    }
 }
