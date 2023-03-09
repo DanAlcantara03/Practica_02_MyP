@@ -29,13 +29,13 @@ public abstract class Pedido {
      * @param tieneQueso Boolean para saber si el Pedido tiene queso.
      * @param esVegetariano Boolean para saber si el Pedido es vegetariano.
      */
-    public Pedido(int id, String nombre, String descripcion, double precio, boolean tieneQueso, boolean esVegetariano){
+    public Pedido(int id, String nombre, String descripcion, double precio){
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.tieneQueso = tieneQueso;
-        this.esVegetariano = esVegetariano;
+        this.tieneQueso = false;
+        this.esVegetariano = false;
     }
 
     /**

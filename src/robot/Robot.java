@@ -39,6 +39,7 @@ public class Robot{
         llegoALaMesa  = false;
         pedidoRecibido = false;
         terminoPedido = false;
+        estadoActual = new ModoSuspendido(this);
         /* Inicializamos todos los estados del robot con el propio robot */
         modoSuspendido = new ModoSuspendido(this);
         modoCaminar = new ModoCaminar(this);
