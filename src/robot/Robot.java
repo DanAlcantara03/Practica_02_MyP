@@ -7,7 +7,8 @@ import robot.estados.*;
 import robot.mesa.*;
 
 /**
- * Clase Robot ...
+ * Clase Robot que nos da un robot que hace de mesero y cocinero
+ * para un restaurante.
  */
 public class Robot{
 
@@ -18,8 +19,8 @@ public class Robot{
     /* Nos ayuda a saber si el robot ya recibio un pedido, y ademas ver si dicho
     pedido es correcto*/
     private boolean pedidoRecibido;
-    /* Nos ayuda a saber si el robot termino de cocinar el platillo */
-    private boolean terminoPlatillo;
+    /* Nos ayuda a saber si el robot termino de cocinar el Pedido */
+    private boolean terminoPedido;
     /* Son los menus que puede llegar a tener el restaurante y que va poder leer el
     robot */
     private ArrayList<Menu> menus;
@@ -37,59 +38,15 @@ public class Robot{
     public Robot(){
         llegoALaMesa  = false;
         pedidoRecibido = false;
-        terminoPlatillo = false;
-
+        terminoPedido = false;
+        /* Inicializamos todos los estados del robot con el propio robot */
+        modoSuspendido = new ModoSuspendido(this);
+        modoCaminar = new ModoCaminar(this);
+        modoAtenderCliente = new ModoAtenderCliente(this);
+        modoCocinar = new ModoCocinar(this);
     }
 
-    /**
-     * Metodo que esta pensado para usarse con el metodo activar en el estado
-     * suspendido, para que cuando el usuario active el robot, este le pueda incertar
-     * la mesa en la que quiere sentarse.
-     */
-    public void recibirMesa(MesaCliente mesa){
-        this.mesa = mesa;
-    }
-
-    /**
-     * Metodo que nos ayuda a saber si el robot llego a la mesa.
-     * @return True si el robot llego a la mesa, false en otro caso.
-     */
-    public boolean llegoALaMesa(){
-        return llegoALaMesa;
-    }
-
-    /**
-     * Metodo que nos ayuda a saber si el robot recibio el pedido correctamente.
-     * @return False si el pedido no esta en el menú o si no se ah ingresado ningún
-     * pedido, true en otro caso.
-     */
-    public boolean pedidoRecibido(){
-        return pedidoRecibido;
-    }
-
-    /**
-     * Metodo que nos ayuda a saber si el robot termino el platillo.
-     * @return True si el robot termino el platillo, False en otro caso.
-     */
-    public boolean terminoPlatillo(){
-        return terminoPlatillo;
-    }
-
-    /**
-     * Metodo que nos regresa la Mesa que el cliente inserto al activar el robot.
-     * @return La mesa que el cliente puso.
-     */
-    public MesaCliente getMesacliente(){
-        return mesa;
-    }
-
-    /**
-     * Metodo que nos ayuda a asignar un estado al robot.
-     * @param estado El estado que se le quiere asignar al robot.
-     */
-    public void asignarEstado(EstadoRobot estado){
-        estadoActual = estado;
-    }
+    /* Metodos con las acciones que puede realizar el robot en general */
 
     /**
      * Metodo que activa, al robot si el estado actual es supendido, en otros casos
@@ -118,26 +75,113 @@ public class Robot{
     }
 
     /**
-     * Metodo que hace que el robot cocine el platillo dado por el usuario.
+     * Metodo que hace que el robot cocine el Pedido dado por el usuario.
      */
     public void cocinar(){
-        estadoActual.cocinarPlatillo();
+        estadoActual.cocinarPedido();
     }
 
     /**
-     * Metodo que hace que el robot entregue el platillo, solo si ya lo termino de
+     * Metodo que hace que el robot entregue el Pedido, solo si ya lo termino de
      * cocinar y esta en el Modo atenderCliente.
      */
-    public void entregarPlatillo(){
-        estadoActual.entregarPlatillo();
+    public void entregarPedido(){
+        estadoActual.entregarPedido();
     }
 
     /**
      * Metodo que hace que el robot se suspenda solo si esta en el modo caminando, o
-     * si ya termino de cocinar y entrego el platillo del cliente.
+     * si ya termino de cocinar y entrego el Pedido del cliente.
      */
     public void suspender(){
         estadoActual.suspender();
+    }
+
+    /* Metodos para obtener información del robot y asignar estados */
+
+    /**
+     * Metodo que nos ayuda a saber si el robot llego a la mesa.
+     * @return True si el robot llego a la mesa, false en otro caso.
+     */
+    public boolean llegoALaMesa(){
+        return llegoALaMesa;
+    }
+
+    /**
+     * Metodo que nos ayuda a saber si el robot recibio el pedido correctamente.
+     * @return False si el pedido no esta en el menú o si no se ah ingresado ningún
+     * pedido, true en otro caso.
+     */
+    public boolean pedidoRecibido(){
+        return pedidoRecibido;
+    }
+
+    /**
+     * Metodo que nos ayuda a saber si el robot termino el Pedido.
+     * @return True si el robot termino el Pedido, False en otro caso.
+     */
+    public boolean terminoPedido(){
+        return terminoPedido;
+    }
+
+    /**
+     * Metodo que nos ayuda a obtener el estado suspendio del robot.estados
+     * @return El estado de Suspendido del robot
+     */
+    public EstadoRobot getModoSuspender(){
+        return modoSuspendido;
+    }
+
+    /**
+     * Metodo que nos ayuda a obtener el estado caminando del robot
+     * @return El estado de caminando del robot
+     */
+    public EstadoRobot getModoCaminar(){
+        return modoCaminar;
+    }
+
+    /**
+     * Metodo que nos ayuda a obtener el estado Atendiendo Cliente del robot
+     * @return El estado atendiendo del robot
+     */
+    public EstadoRobot getModoAtenderCliente(){
+        return modoAtenderCliente;
+    }
+
+    /**
+     * Metodo que nos ayuda a obtener el estado Cocinando del robot.
+     * @return El estado Cocinando del robot.
+     */
+    public EstadoRobot getModoCocinar(){
+        return modoCocinar;
+    }
+
+    /* Metodos auxiliares tanto para los estados como para el funcionamiento
+    en general del robot. */
+
+    /**
+     * Metodo que esta pensado para usarse con el metodo activar en el estado
+     * suspendido, para que cuando el usuario active el robot, este le pueda incertar
+     * la mesa en la que quiere sentarse.
+     */
+    public void recibirMesa(MesaCliente mesa){
+        this.mesa = mesa;
+    }
+
+    /**
+     * Metodo que nos regresa la Mesa que el cliente inserto al activar el robot.
+     * @return La mesa que el cliente puso.
+     */
+    public MesaCliente getMesaCliente(){
+        return mesa;
+    }
+
+    /**
+     * Metodo que nos ayuda a asignar un estado al robot.
+     * @param estado El estado que se le quiere asignar al robot.
+     */
+    public void asignarEstado(EstadoRobot estado){
+        estadoActual = estado;
     }
 
     /**
@@ -150,7 +194,7 @@ public class Robot{
         menu += "2.- Caminar.\n";
         menu += "3.- Leer Menu.\n";
         menu += "4.- Cocinar.\n";
-        menu += "5.- EntregarPlatillo.\n";
+        menu += "5.- EntregarPedido.\n";
         menu += "6.- Suspender.\n";
         menu += "0.- Salir del restaurante.\n";
         return menu;
