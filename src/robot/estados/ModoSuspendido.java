@@ -19,4 +19,10 @@ public class ModoSuspendido implements EstadoRobot{
         this.robot = robot;
     }
 
+    /**
+     * 
+     */
+    public void activar(){
+        
+    }
 }

@@ -32,29 +32,20 @@ public interface EstadoRobot{
      */
     public void leerMenu();
 
-
-    /**
-     * Metodo para simular que el cliente elige un platillo, dependiendo del estado 
-     * en el que el robot esté.
-     * Ya que el robot le mostro todo el Menu al cliente le da la opcion de elegir 
-     * alguno de dichos platillos y aparte le pregunta si quiere agregar o quitar 
-     * x ingrediente a dicho platillo.
-     */
-    public void elegirPlatillo();
-
     /**
      * Metodo auxiliar que nos ayuda a simular que el robot esta cocinando un platillo,
      * esto lo va a hacer mostrandole al cliente todo el proceso que se sigue al crear 
-     * dicho platillo
-     * 
-     * 
+     * dicho platillo.
+     * El robot solo puede cocinar si el cliente ah ingresado el id de algun platillo
+     * en el modo Atender Cliente, en otro caso regresa un mensaje de que no puede
+     * realizar está acción.
      */
     public void cocinarPlatillo();
 
 
     /**
      * Metodo auxiliar que nos ayuda a simular que el robot esta entregandole el
-     * platillo al cliente
+     * platillo al cliente.
      */
     public void entregarPlatillo();
 

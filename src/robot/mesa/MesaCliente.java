@@ -1,5 +1,6 @@
 package robot.mesa;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class MesaCliente{
@@ -8,6 +9,8 @@ public class MesaCliente{
     int noMesa;
     /* Las instrucciones que tiene que seguir el robot para llegar a la mesa del cliente. */
     LinkedList<Instruccion> instrucciones;
+    /* Un iterador para ir recorriendo poco a poco las instrucciones que se le dan al robot. */
+    Iterator<Instruccion> iterator;
     /* Boolean para saber si el robot llego a la mesa del cliente. */
     boolean llego;
 
@@ -20,26 +23,40 @@ public class MesaCliente{
     public MesaCliente(int noMesa,LinkedList<Instruccion> instrucciones){
         this.noMesa = noMesa;
         this.instrucciones = instrucciones;
+        this.iterator = instrucciones.iterator();
         llego = false;
     }
 
     /**
-     * Metodo que imprime en terminal los pasos que da al robot para ira la mesa que
-     * eligio el cliente.
+     * Metodo que hace que el robot avance hacia la siguiente coordenada de la 
+     * instrucción, para así poder llegar a la mesa del cliente, y también nos dice
+     * como avanzo el robot y hacia que dirección, o si ya llego a la mesa del cliente.
      */
-    public void irAMesa(){
-        for(Instruccion inst: instrucciones){
-            String rI = "";
-            rI += " El robot esta recorriendo " + (((double)inst.getDistancia())/100) + "m";
-            rI += " hacia " + getDireccion(inst.getDireccion());
-            System.out.println(rI);
-            /* En este caso el robot tarda un ms por cada cm recorrido */
-            simularPausa(inst.getDistancia());
+    public void acercarseAMesa(){
+        if(!iterator.hasNext()){
+            llego = true;
+            System.out.print("El robot ah llegado a la mesa del cliente.");
+        }else{
+            Instruccion instActual = iterator.next();
+        /* En este caso el robot tarda un ms por cada cm recorrido */
+            System.out.println(mensajeDist(instActual));
+            simularPausa(instActual.getDistancia());
         }
-        System.out.println("El robot llego a la mesa " + noMesa + ".");
-        llego = true;
     }
 
+    /**
+     * Metodo auxiliar para saber hacia donde va el robot y que distancia va a recorrer.
+     * @param inst la instrucción que va a ejecutar el robot para recorrer x distancia 
+     * en y direccion.
+     * @return Un mensaje con información de los movimientos que va a realizar el robot.
+     */
+    private String mensajeDist(Instruccion inst){
+        String rI = "";
+            rI += " El robot esta recorriendo " + (((double)inst.getDistancia())/100) + "m";
+            rI += " hacia " + getDireccion(inst.getDireccion());
+        return rI;
+    }
+    
     /**
      * Metodo que nos ayuda a simular que el robot termino de atender al cliente, y 
      * vuelve a su posición inicial
