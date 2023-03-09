@@ -11,16 +11,28 @@ public class Robot{
 
     /* Son los menus que puede llegar a tener el restaurante y que va poder leer el
        robot */
-    ArrayList<Menu> menus;
+    private ArrayList<Menu> menus;
     /* Es el estado actual del robot */
-    EstadoRobot estadoActual;
+    private EstadoRobot estadoActual;
     /* Son los estados que puede tener el Robot */
+    private EstadoRobot modoSuspendido;
+    private EstadoRobot modoCaminar;
+    private EstadoRobot modoAtenderCliente;
+    private EstadoRobot modoCocinar;
 
     /**
-     * Constructor que inicializa al robot 
+     * Constructor que inicializa al robot y todos sus parametros.
      */
     public Robot(){
         
+    }
+
+    /**
+     * Metodo que nos ayuda a asignar un estado al robot
+     * @param estado El estado que se le quiere asignar al robot
+     */
+    public void asignarEstado(EstadoRobot estado){
+        estadoActual = estado;
     }
 
 }

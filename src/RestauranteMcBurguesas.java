@@ -4,11 +4,7 @@
  * Este main nos ayuda a simular varias situaciones 
  */
 public class RestauranteMcBurguesas{
-
-    public static boolean esPar(int n){
-        return n % 2 == 0;
-    }
-
+f
     public static void main( String [] args ){
         
     }
