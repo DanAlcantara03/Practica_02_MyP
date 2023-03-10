@@ -11,18 +11,20 @@ import robot.menus.hamburguesas.Hamburguesa;
 public class MenuHamburguesas implements Menu{
     
     /* Es la estructura de datos en donde vamos a poner las hamburgesas que siempre 
-    estan disponibles para el restaurante */
+    estan disponibles para el restaurante. */
     private Hamburguesa[] hamburguesas;
 
     /**
-     * 
+     * Constructor por defecto de las hamburgesas en general.
      */
     public MenuHamburguesas(){
         //hamburguesas = {};
     }
 
     /**
-     * 
+     * Metodo para poder obtener un nuevo iterador de todas las hamburguesas del menu,
+     * cada que lo mandemos a llamar.
+     * @return Un iterador de las hamburguesas que están en esté menú.
      */
     public Iterator<Hamburguesa> createIterator(){
         return new ArrHamburguesasIterador();

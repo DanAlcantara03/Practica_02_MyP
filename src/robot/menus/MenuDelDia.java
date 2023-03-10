@@ -11,13 +11,14 @@ public class MenuDelDia implements Menu{
     private LinkedList<Hamburguesa> hamburguesas = new LinkedList<>();
 
     /**
-     * 
+     * Constructor por defecto del menú del día.
      */
     public MenuDelDia(){
         //Aqui se inicializan las hamburguesas y se agregan
         // a la estructura de datos.
         //Hamburguesa Hamburguesa_Komi = new Hamburguesa(0001,"Hamburguesa Komi");
     }
+
 
     public Iterator<Hamburguesa> createIterator(){
         return hamburguesas.iterator();

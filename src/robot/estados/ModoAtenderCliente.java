@@ -27,8 +27,8 @@ public class ModoAtenderCliente implements EstadoRobot{
     }
 
     /**
-     * El robot no puede caminar mientras está atendiendo al cliente ya que
-     * se encuentra frente a la mesa.
+     * El robot no puede caminar mientras está atendiendo al cliente ya que se 
+     * encuentra frente a la mesa.
      */
     public void caminar(){
         System.out.println(MensajesComunes.noPuede("caminar", "atendiendo"));
@@ -49,7 +49,7 @@ public class ModoAtenderCliente implements EstadoRobot{
      * recibido un pedido.
      */
     public void cocinarPedido(){
-       System.out.println(MensajesComunes.noPuede("cocinar", "atendiendo")); 
+        System.out.println(MensajesComunes.noPuede("cocinar", "atendiendo")); 
     }
 
     /**

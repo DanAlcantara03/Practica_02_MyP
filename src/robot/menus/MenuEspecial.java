@@ -11,7 +11,7 @@ import robot.menus.hamburguesas.Hamburguesa;
 public class MenuEspecial implements Menu{
     
     /* Es el hash table en donde guardaremos las hamburguesas */
-    private Hashtable <Integer,Hamburguesa> deluxe = new Hashtable<Integer,Hamburguesa>();
+    private Hashtable <Integer,Hamburguesa> hamburguesasDeluxe = new Hashtable<Integer,Hamburguesa>();
 
     /**
      * Constructor por defecto del menú especial.
@@ -22,7 +22,7 @@ public class MenuEspecial implements Menu{
 
     
     public Iterator<Hamburguesa> createIterator(){
-        return deluxe.values().iterator();
+        return hamburguesasDeluxe.values().iterator();
     }
     
 }
