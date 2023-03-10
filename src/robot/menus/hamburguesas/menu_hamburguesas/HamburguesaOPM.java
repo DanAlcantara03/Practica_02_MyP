@@ -4,21 +4,21 @@ import java.util.LinkedList;
 
 import robot.menus.hamburguesas.Hamburguesa;
 /**
- * Clase que modela una hamburguesa de tipo Komi.
+ * Clase que modela una hamburguesa de tipo One Punch Man.
  */
-public class HambrguesaKomi extends Hamburguesa{
+public class HamburguesaOPM extends Hamburguesa{
     
     /**
-     * Constructor por defecto de la hamburguesa Komi.
+     * Constructor por defecto de la hamburguesa One Punch Man.
      */
-    public HambrguesaKomi(){
-        super(1001, "Hamburguesa Komi", 
-        "Te va a dejar sin palabras - Pan clásico, carne, catsup, mayonesa, mostaza",
-        40.50, false);
+    public HamburguesaOPM(){
+        super(1002, "Hamburguesa One Punch Man", 
+        "Con una te basta - Pan brioche, catsup, mayonesa, mostaza, extra vegetales, extra carne y extra queso",
+        80, false);
     }
 
     /**
-     * Metodo que nos devuelve la preparación paso a paso de la hamburguesa Komi.
+     * Metodo que nos devuelve la preparación paso a paso de la hamburguesa One Punch Man.
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
