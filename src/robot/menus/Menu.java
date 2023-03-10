@@ -1,10 +1,12 @@
 package robot.menus;
 
+import java.util.Iterator;
+
 /**
  * Interfaz para poder crear los menus de varios tipos
  */
 public interface Menu {
     
     /* El iterador del menu */
-    public void createIterator();
+    public Iterator<Hamburguesa> createIterator();
 }

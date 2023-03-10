@@ -3,13 +3,13 @@ package robot.menus;
 import java.util.LinkedList;
 
 /**
- * Clase abstracta que nos representa a un Hamburguesa en general.
+ * Clase abstracta que nos representa a una Hamburgueza en general.
  */
 public abstract class Hamburguesa {
     
-    /* El id que va a tener un Hamburguesa para poder identificarlo. */
+    /* El id que va a tener una Hamburguesa para poder identificarla. */
     protected int id;
-    /* El nombre del Hamburguesa. */
+    /* El nombre de la Hamburguesa. */
     protected String nombre;
     /* La descripción de la Hamburguesa. */
     protected String descripcion;
@@ -17,11 +17,11 @@ public abstract class Hamburguesa {
     protected double precio;
     /* Boolean para saber si la Hamburguesa tiene queso. */
     protected boolean tieneQueso;
-    /* Boolean para saber si la Hamburguesa es vegetariano. */
+    /* Boolean para saber si la Hamburguesa es vegetariana. */
     protected boolean esVegetariano;
 
     /**
-     * Constructor por parametros de un Hamburguesa.
+     * Constructor por parametros de la Hamburguesa.
      * @param id El id del Hamburguesa.
      * @param nombre El nombre del Hamburguesa.
      * @param descripcion La descripción del Hamburguesa.
@@ -29,17 +29,17 @@ public abstract class Hamburguesa {
      * @param tieneQueso Boolean para saber si el Hamburguesa tiene queso.
      * @param esVegetariano Boolean para saber si el Hamburguesa es vegetariano.
      */
-    public Hamburguesa(int id, String nombre, String descripcion, double precio, boolean tieneQueso, boolean esVegetariano){
+    public Hamburguesa(int id, String nombre, String descripcion, double precio){
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.tieneQueso = tieneQueso;
-        this.esVegetariano = esVegetariano;
+        this.tieneQueso = false;
+        this.esVegetariano = false;
     }
 
     /**
-     * Metodo getter para el Id del Hamburguesa.
+     * Metodo getter para el Id de la Hamburguesa.
      * @return el Id del Hamburguesa.
     */
     public int getId(){
@@ -47,7 +47,7 @@ public abstract class Hamburguesa {
     }
 
     /**
-     * Metodo getter para el nombre del Hamburguesa.
+     * Metodo getter para el nombre de la Hamburguesa.
      * @return el nombre del Hamburguesa.
      */
     public String getNombre(){
@@ -55,7 +55,7 @@ public abstract class Hamburguesa {
     }
 
     /**
-     * Metodo getter para la descripción del Hamburguesa.
+     * Metodo getter para la descripción de la Hamburguesa.
      * @return la descripción del Hamburguesa.
      */
     public String getDescripcion(){
@@ -63,7 +63,7 @@ public abstract class Hamburguesa {
     }
 
     /**
-     * Metodo getter para el precio del Hamburguesa.
+     * Metodo getter para el precio de la Hamburguesa.
      * @return el precio del Hamburguesa.
      */
     public double getPrecio(){
@@ -71,7 +71,7 @@ public abstract class Hamburguesa {
     }
 
     /**
-     * Metodo getter para saber si el Hamburguesa tiene queso.
+     * Metodo getter para saber si la Hamburguesa tiene queso.
      * @return true si el Hamburguesa tiene queso, false en otro caso.
      */
     public boolean tieneQueso(){

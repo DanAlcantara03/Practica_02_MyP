@@ -43,7 +43,7 @@ public class RestauranteMcBurguesas{
                     robotRestaurante.cocinar();
                     break;
                 case 5:
-                    robotRestaurante.entregarPlatillo();
+                    robotRestaurante.entregarPedido();
                     break;
                 case 6:
                     robotRestaurante.suspender();

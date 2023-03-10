@@ -27,33 +27,33 @@ public interface EstadoRobot{
      * Metodo para simular como lee el menu el robot, dependiendo del estado en el que 
      * esté.
      * Cuando el robot esta recien llegando a la mesa procede a leer el menu, también
-     * lee el menu despues de que entrego un platillo y ademas el cliente quiere 
+     * lee el menu despues de que entrego un Pedido y ademas el cliente quiere 
      * pedirle otro.
      */
     public void leerMenu();
 
     /**
-     * Metodo auxiliar que nos ayuda a simular que el robot esta cocinando un platillo,
+     * Metodo auxiliar que nos ayuda a simular que el robot esta cocinando un Pedido,
      * esto lo va a hacer mostrandole al cliente todo el proceso que se sigue al crear 
-     * dicho platillo.
-     * El robot solo puede cocinar si el cliente ah ingresado el id de algun platillo
+     * dicho Pedido.
+     * El robot solo puede cocinar si el cliente ah ingresado el id de algun Pedido
      * en el modo Atender Cliente, en otro caso regresa un mensaje de que no puede
      * realizar está acción.
      */
-    public void cocinarPlatillo();
+    public void cocinarPedido();
 
 
     /**
      * Metodo auxiliar que nos ayuda a simular que el robot esta entregandole el
-     * platillo al cliente.
+     * Pedido al cliente.
      */
-    public void entregarPlatillo();
+    public void entregarPedido();
 
     /**
      * Metodo auxiliar que nos ayuda a pasar al robot al estado suspendido dependiendo
      * de cual sea su estado actual.
      * El robot solo se va a poder suspender si esta caminando o si ya entrego el 
-     * platillo del cliente, y ademas el cliente ya no quiere ordenar nada más.
+     * Pedido del cliente, y ademas el cliente ya no quiere ordenar nada más.
      */
     public void suspender();
 }
