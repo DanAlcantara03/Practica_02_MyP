@@ -1,9 +1,9 @@
-package robot.menus;
+package robot.menus.hamburguesas;
 
 import java.util.LinkedList;
 
 /**
- * Clase abstracta que nos representa a una Hamburgueza en general.
+ * Clase abstracta que nos representa a una Hamburguesa en general.
  */
 public abstract class Hamburguesa {
     
@@ -21,7 +21,9 @@ public abstract class Hamburguesa {
     protected boolean esVegetariana;
 
     /**
-     * Constructor por parametros de la Hamburguesa.
+     * Constructor por parametros de una hamburguesa especifica.
+     * Este constructor esta pensado para que las hamburguesas que extiendad a esta 
+     * clase pongan sus parametros de una forma rapida y fácil
      * @param id El id de la Hamburguesa.
      * @param nombre El nombre de la Hamburguesa.
      * @param descripcion La descripción de la Hamburguesa.
@@ -29,11 +31,12 @@ public abstract class Hamburguesa {
      * @param tieneQueso Boolean para saber si el Hamburguesa tiene queso.
      * @param esVegetariana Boolean para saber si el Hamburguesa es vegetariano.
      */
-    public Hamburguesa(int id, String nombre, String descripcion, double precio){
+    protected Hamburguesa(int id, String nombre, String descripcion, double precio, boolean esVegetariana){
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.esVegetariana = esVegetariana;
     }
 
     /**
@@ -85,17 +88,44 @@ public abstract class Hamburguesa {
     }
 
     /**
+     * Metodo que nos ayuda a obtener toda la información relaciónada con la
+     * hamburguesa.
+     * @return Un String con una descripción detallada de la hamburguesa.
+     */
+    public String getHamburguesa(){
+        String hamburguesa = "";
+        hamburguesa += "Id: " + getId() + "\n";
+        hamburguesa += "   Nombre:" + getNombre() + "\n";
+        hamburguesa += "   Descripción" + getDescripcion() + "\n";
+        hamburguesa += "   Precio: " + getPrecio() + "\n";
+        hamburguesa += "   Es Vegetariana: " + vegetariana() + "\n";
+        return hamburguesa;
+    }
+
+    /**
+     * Metodo hook para que el robot le pregunte al cliente si quiere ponerle queso a
+     * su Hamburguesa o no, o simplemente que diga que no lleva queso, ya que es
+     * vegetariana.
+     */
+    public void llevaQueso(){}
+
+    /**
      * Metodo abstracto que nos ayuda a saber como se prepara el Hamburguesa, paso a paso.
      * @param extras son los pasos extras que puede haber en la preparación de la hamburguesa.
      * Dichos pasos siempre se ponen entre los panes de la hamburguesa.
      * @return Una Lista con los pasos que se siguen para preparar el Hamburguesa.
      */
-    public abstract LinkedList<String> mostrarPreparacion(String[] extras);
+    public abstract LinkedList<String> mostrarPreparacion();
 
     /**
-     * Metodo hook para que el robot le pregunte al cliente si quiere ponerle queso a su
-     * hamburgueza o no, o simplemente que diga que no lleva queso, ya que es
-     * vegetariana.
+     * Metodo auxiliar para poder comunicar si la hamburguesa es vegetariana.
+     * @return True si la hamburguesa es vegetariana, false en otro caso.
      */
-    public void llevaQueso(){}
+    private String vegetariana(){
+        if(esVegetariana){
+            return "(SI)";
+        }else{
+            return "(NO)";
+        }
+    }
 }

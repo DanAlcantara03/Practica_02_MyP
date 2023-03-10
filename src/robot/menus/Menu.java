@@ -2,6 +2,8 @@ package robot.menus;
 
 import java.util.Iterator;
 
+import robot.menus.hamburguesas.Hamburguesa;
+
 /**
  * Interfaz para poder crear los menus de varios tipos
  */
