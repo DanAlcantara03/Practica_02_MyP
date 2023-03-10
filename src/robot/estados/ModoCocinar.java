@@ -27,17 +27,18 @@ public class ModoCocinar implements EstadoRobot{
     }
 
     /**
-     * 
+     * El robot no puede cocinar mientras camina.
      */
     public void caminar(){
-        
+        System.out.println(MensajesComunes.noPuede("caminar", "cocinar"));
     }
 
     /**
-     * 
+     * El robot no puede leer el menu ya que se encuentra cocinando
+     * un pedido que se le hizo con anterioridad.
      */
     public void leerMenu(){
-        
+      System.out.println(MensajesComunes.noPuede("leer menu", "cocinar"));  
     }
 
     /**
@@ -48,17 +49,19 @@ public class ModoCocinar implements EstadoRobot{
     }
 
     /**
-     * 
+     * El robot no puede entregar el pedido sin haber acabado de cocinarlo
+     * antes.
      */
     public void entregarPedido(){
-
+        System.out.println(MensajesComunes.noPuede("entregar pedido", "cocinar"));
     }
 
     /**
-     *  
+     *  El robot no se puede suspender mientras está cocinando un pedido, primero 
+     * deberá terminar de cocinar y atender al cliente.
      */
     public void suspender(){
-        
+        System.out.println(MensajesComunes.noPuede("suspender", "cocinar"));
     }
 
 }

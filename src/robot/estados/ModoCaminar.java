@@ -27,38 +27,41 @@ public class ModoCaminar implements EstadoRobot{
     }
 
     /**
-     * 
+     * Metodo que nos ayuda a que el robot llegue a la mesa del cliente
+     * para poder atenderlo.
      */
     public void caminar(){
-        
+      //Aqui va tu codigo  
     }
 
     /**
-     * 
+     * El robot no puede leer el menú, antes debe llegar a la mesa
+     * en donde se encuentra el cliente.
      */
     public void leerMenu(){
-        
+        System.out.println(MensajesComunes.noPuede("leer menu", "caminar"));
     }
 
     /**
-     * 
+     * El robot no puede cocinar mientras camina.
      */
     public void cocinarPedido(){
-        
+            System.out.println(MensajesComunes.noPuede("cocinar", "caminar"));
     }
 
     /**
-     * 
+     * El robot no puede entregar el pedido sin antes haber llegado a
+     * la mesa del cliente, haber recibido un pedido y cocinarlo.
      */
     public void entregarPedido(){
-
+        System.out.println(MensajesComunes.noPuede("entregar pedido", "caminar"));
     }
 
     /**
      *  
      */
     public void suspender(){
-        
+        //Aqui va tu codigo
     }
 
 }
