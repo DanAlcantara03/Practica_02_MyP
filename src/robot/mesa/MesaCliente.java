@@ -6,13 +6,13 @@ import java.util.LinkedList;
 public class MesaCliente{
 
     /* El no de mesa del cliente. */
-    int noMesa;
+    private int noMesa;
     /* Las instrucciones que tiene que seguir el robot para llegar a la mesa del cliente. */
-    LinkedList<Instruccion> instrucciones;
+    private LinkedList<Instruccion> instrucciones;
     /* Un iterador para ir recorriendo poco a poco las instrucciones que se le dan al robot. */
-    Iterator<Instruccion> iterator;
+    private Iterator<Instruccion> iterator;
     /* Boolean para saber si el robot llego a la mesa del cliente. */
-    boolean llego;
+    private boolean llego;
 
     /**
      * Constructor por defecto de una Mesa de cliente.
@@ -24,7 +24,24 @@ public class MesaCliente{
         this.noMesa = noMesa;
         this.instrucciones = instrucciones;
         this.iterator = instrucciones.iterator();
-        llego = false;
+        if(!iterator.hasNext())
+            llego = true;
+    }
+
+    /**
+     * Metodo getter para saber el no de la Mesa que escogio el cliente
+     * @return el no de mesa del cliente
+     */
+    public int getNoMesa(){
+        return noMesa;
+    }
+
+    /**
+     * Metodo getter para saber si el robot llegó a la mesa.
+     * @return
+     */
+    public boolean llego(){
+        return llego;
     }
 
     /**
@@ -62,7 +79,9 @@ public class MesaCliente{
      * vuelve a su posición inicial
      */
     public void regresarPosicionInicial(){
-        llego = false;
+        iterator = instrucciones.iterator();
+        if(iterator.hasNext())
+            llego = false;
     }
 
     /**

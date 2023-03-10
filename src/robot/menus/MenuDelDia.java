@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import robot.menus.hamburguesas.Hamburguesa;
 
 public class MenuDelDia implements Menu{
+    
     /* Es la estructura de datos en donde guardaremos las hamburguesas del día. */
     private LinkedList<Hamburguesa> hamburguesas = new LinkedList<>();
 
@@ -13,6 +14,8 @@ public class MenuDelDia implements Menu{
      * 
      */
     public MenuDelDia(){
+        //Aqui se inicializan las hamburguesas y se agregan
+        // a la estructura de datos.
         //Hamburguesa Hamburguesa_Komi = new Hamburguesa(0001,"Hamburguesa Komi");
     }
 
