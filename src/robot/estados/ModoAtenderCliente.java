@@ -27,37 +27,45 @@ public class ModoAtenderCliente implements EstadoRobot{
     }
 
     /**
-     * 
+     * El robot no puede caminar mientras está atendiendo al cliente ya que
+     * se encuentra frente a la mesa.
      */
     public void caminar(){
+        System.out.println(MensajesComunes.noPuede("caminar", "atendiendo"));
         
     }
 
     /**
+     * 
      * 
      */
     public void leerMenu(){
-        
+        //Aqui va tu codigo
+
     }
 
     /**
-     * 
+     * El robot no puede cocinar un platillo sin antes haber
+     * recibido un pedido.
      */
     public void cocinarPedido(){
-        
+       System.out.println(MensajesComunes.noPuede("cocinar", "atendiendo")); 
     }
 
     /**
      * 
      */
     public void entregarPedido(){
+        //Aqui va tu codigo
 
     }
 
     /**
-     *  
+     *  El robot no se puede suspender en este momento ya que 
+     * se encuentra atendiendo al cliente.
      */
     public void suspender(){
+        System.out.println(MensajesComunes.noPuede("suspenderme", "atendiendo"));
         
     }
 
