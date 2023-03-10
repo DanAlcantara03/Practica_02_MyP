@@ -18,24 +18,22 @@ public abstract class Hamburguesa {
     /* Boolean para saber si la Hamburguesa tiene queso. */
     protected boolean tieneQueso;
     /* Boolean para saber si la Hamburguesa es vegetariana. */
-    protected boolean esVegetariano;
+    protected boolean esVegetariana;
 
     /**
      * Constructor por parametros de la Hamburguesa.
-     * @param id El id del Hamburguesa.
-     * @param nombre El nombre del Hamburguesa.
-     * @param descripcion La descripción del Hamburguesa.
+     * @param id El id de la Hamburguesa.
+     * @param nombre El nombre de la Hamburguesa.
+     * @param descripcion La descripción de la Hamburguesa.
      * @param precio El precio del Hamburguesa.
      * @param tieneQueso Boolean para saber si el Hamburguesa tiene queso.
-     * @param esVegetariano Boolean para saber si el Hamburguesa es vegetariano.
+     * @param esVegetariana Boolean para saber si el Hamburguesa es vegetariano.
      */
     public Hamburguesa(int id, String nombre, String descripcion, double precio){
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.tieneQueso = false;
-        this.esVegetariano = false;
     }
 
     /**
@@ -82,13 +80,22 @@ public abstract class Hamburguesa {
      * Metodo getter para saber si el Hamburguesa es vegetariano.
      * @return true si el Hamburguesa es vegetariano, false en otro caso.
      */
-    public boolean esVegetariano(){
-        return esVegetariano;
+    public boolean esVegetariana(){
+        return esVegetariana;
     }
 
     /**
      * Metodo abstracto que nos ayuda a saber como se prepara el Hamburguesa, paso a paso.
+     * @param extras son los pasos extras que puede haber en la preparación de la hamburguesa.
+     * Dichos pasos siempre se ponen entre los panes de la hamburguesa.
      * @return Una Lista con los pasos que se siguen para preparar el Hamburguesa.
      */
-    public abstract LinkedList<String> mostrarPreparacion();
+    public abstract LinkedList<String> mostrarPreparacion(String[] extras);
+
+    /**
+     * Metodo hook para que el robot le pregunte al cliente si quiere ponerle queso a su
+     * hamburgueza o no, o simplemente que diga que no lleva queso, ya que es
+     * vegetariana.
+     */
+    public void llevaQueso(){}
 }
