@@ -1,12 +1,17 @@
 package robot.menus;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class MenuDelDia {
-    private LinkedList<Pedido> hamburguesas = new LinkedList<>();
+public class MenuDelDia implements Menu{
+    private LinkedList<Hamburguesa> hamburguesas = new LinkedList<>();
 
 
     public MenuDelDia(){
-        Pedido Hamburguesa_Komi = new Pedido(0001,"Hamburguesa Komi");
+        //Hamburguesa Hamburguesa_Komi = new Hamburguesa(0001,"Hamburguesa Komi");
+    }
+
+    public Iterator<Hamburguesa> createIterator(){
+        return hamburguesas.iterator();
     }
 }
