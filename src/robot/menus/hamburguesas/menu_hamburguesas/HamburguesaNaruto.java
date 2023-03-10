@@ -4,21 +4,21 @@ import java.util.LinkedList;
 
 import robot.menus.hamburguesas.Hamburguesa;
 /**
- * Clase que modela una hamburguesa de tipo Komi.
+ * Clase que modela una hamburguesa de tipo Naruto.
  */
-public class HambrguesaKomi extends Hamburguesa{
+public class HamburguesaNaruto extends Hamburguesa{
     
     /**
-     * Constructor por defecto de la hamburguesa Komi.
+     * Constructor por defecto de la hamburguesa Naruto.
      */
-    public HambrguesaKomi(){
-        super(1001, "Hamburguesa Komi", 
-        "Te va a dejar sin palabras - Pan clásico, carne, catsup, mayonesa, mostaza",
-        40.50, false);
+    public HamburguesaNaruto(){
+        super(1003, "Hamburguesa Naruto", 
+        "Mucho relleno - Pan clásico, catsup, mayonesa, mostaza, vegetales, soya",
+        50, true);
     }
 
     /**
-     * Metodo que nos devuelve la preparación paso a paso de la hamburguesa Komi.
+     * Metodo que nos devuelve la preparación paso a paso de la hamburguesa Naruto.
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
