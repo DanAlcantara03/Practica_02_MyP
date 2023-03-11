@@ -50,8 +50,7 @@ public class ModoAtenderCliente implements EstadoRobot{
         }else{
             for(Menu menu: robot.getMenus()){
                 Iterator<Hamburguesa> hamb = menu.createIterator();
-                    System.out.println("----------------------------------------------------------------------------------------------------------");
-                    System.out.println("================================" + menu.getNombreMenu().toUpperCase() + "==================================\n");
+                    System.out.println("======================================= " + menu.getNombreMenu().toUpperCase() + " =========================================\n");
                 while(hamb.hasNext()){                
                     System.out.println(hamb.next().getHamburguesa());
                 }
@@ -118,7 +117,7 @@ public class ModoAtenderCliente implements EstadoRobot{
         int id = 0;
         do{
             try{
-                System.out.println("\nPor favor inserte el id del pedido que quiere hacer del menu: ");
+                System.out.print("\nPor favor inserte el id del pedido que quiere hacer del menu: ");
                 id = sc.nextInt();
             }catch(NumberFormatException e){}
             t = idValido(id);
