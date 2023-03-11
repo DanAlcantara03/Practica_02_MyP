@@ -13,7 +13,7 @@ public class HamburguesaSailorMoon extends Hamburguesa{
      */
     public HamburguesaSailorMoon(){
         super(2002, "Hamburguesa Sailor Moon", 
-        "De otro mundo– Pan de colores, tofu , catsup, mayonesa, mostaza, vegetales",
+        "De otro mundo– Pan de colores, tofu , catsup, mostaza, vegetales",
         100.75, true);
     }
 
@@ -22,8 +22,17 @@ public class HamburguesaSailorMoon extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
+        preparacion.add("Dando forma de carne para hamburguesa al tofu");
+        preparacion.add("Calentando el tofu");
+        preparacion.add("Poniendo el pan base de colores");
+        preparacion.add("Poniendo el tofu");
+        preparacion.add("Poniendo la catsup");
+        preparacion.add("Poniendo la mostaza");
+        preparacion.add("Poniendo los pepinillos");
+        preparacion.add("Poniendo la cebolla");
+        preparacion.add("Poniendo la lechuga");
+        preparacion.add("Poniendo el tomate");
+        preparacion.add("Poniendo el pan de colores que cubre");
         return preparacion;
     }
 

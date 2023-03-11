@@ -13,7 +13,7 @@ public class HamburguesaNaruto extends Hamburguesa{
      */
     public HamburguesaNaruto(){
         super(1003, "Hamburguesa Naruto", 
-        "Mucho relleno - Pan clásico, catsup, mayonesa, mostaza, vegetales, soya",
+        "Mucho relleno - Pan clásico, catsup, mostaza, vegetales, soya",
         50, true);
     }
 
@@ -22,15 +22,16 @@ public class HamburguesaNaruto extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
-        preparacion.add("Calentando el pan clásico");
-        preparacion.add("Calentando la carne");
+        preparacion.add("Dando forma de carne para hamburguesa a la soya");
+        preparacion.add("Calentando la soya");
         preparacion.add("Poniendo el pan base");
-        preparacion.add("Poniendo la carne");
-        preparacion.add("Poniendo la mayonesa");
-        preparacion.add("Poniendo el ketchup");
+        preparacion.add("Poniendo la soya");
+        preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
+        preparacion.add("Poniendo los pepinillos");
+        preparacion.add("Poniendo la cebolla");
+        preparacion.add("Poniendo la lechuga");
+        preparacion.add("Poniendo el tomate");
         preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }
