@@ -35,8 +35,8 @@ public class ModoCaminar implements EstadoRobot{
             System.out.println("\n******* El robot ah llegado a la mesa, pasando al modo Atender Cliente. *******\n");
             robot.asignarEstado(robot.getModoAtenderCliente());
         }else{
-            System.out.println("\n******* El robot se esta acercando. *******\n");
             robot.avanzar();
+            System.out.println("\n******* El robot se esta acercando. *******\n");            
         }
     }
 
@@ -45,14 +45,14 @@ public class ModoCaminar implements EstadoRobot{
      * en donde se encuentra el cliente.
      */
     public void leerMenu(){
-        System.out.println(MensajesComunes.noPuede("leer menu", "caminar"));
+        System.out.println(MensajesComunes.noPuede("leer menu", "caminando"));
     }
 
     /**
      * El robot no puede cocinar mientras camina.
      */
     public void cocinarPedido(){
-            System.out.println(MensajesComunes.noPuede("cocinar", "caminar"));
+            System.out.println(MensajesComunes.noPuede("cocinar", "caminando"));
     }
 
     /**
@@ -60,7 +60,7 @@ public class ModoCaminar implements EstadoRobot{
      * la mesa del cliente, haber recibido un pedido y cocinarlo.
      */
     public void entregarPedido(){
-        System.out.println(MensajesComunes.noPuede("entregar pedido", "caminar"));
+        System.out.println(MensajesComunes.noPuede("entregar pedido", "caminando"));
     }
 
     /**

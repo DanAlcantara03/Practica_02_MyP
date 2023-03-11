@@ -96,10 +96,10 @@ public abstract class Hamburguesa {
     public String getHamburguesa(){
         String hamburguesa = "";
         hamburguesa += "Id: " + getId() + "\n";
-        hamburguesa += "   Nombre:" + getNombre() + "\n";
-        hamburguesa += "   Descripción: " + getDescripcion() + "\n";
-        hamburguesa += "   Precio: " + getPrecio() + "\n";
-        hamburguesa += "   Es Vegetariana: " + vegetariana() + "\n";
+        hamburguesa += "Nombre:" + getNombre() + "\n";
+        hamburguesa += "Descripción: " + getDescripcion() + "\n";
+        hamburguesa += "Precio: " + getPrecio() + "\n";
+        hamburguesa += "Es Vegetariana: " + vegetariana() + "\n";
         return hamburguesa;
     }
 
@@ -110,18 +110,18 @@ public abstract class Hamburguesa {
      */
     public void llevaQueso(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("\n Antes que nada, ¿Quiéres queso en tu hamburguesa? (S,N): ");
+        System.out.print("\n Antes que nada, ¿Quiéres queso en tu hamburguesa? (S,N): ");
         String o = sc.nextLine();
         while(true){
             if(o.toUpperCase().equals("S")){
-                System.out.println("\nSimon sale con queso.");
+                System.out.println("\n\nSimon sale con queso.");
                 tieneQueso = true;
                 break;
             }else if(o.toUpperCase().equals("N")){
-                System.out.println("\nEntonces sin queso sera.");
+                System.out.println("\n\nEntonces sin queso sera.");
                 break;
             }else{
-                System.out.println("\nPor favor incerte una opción correcta (S,N)");
+                System.out.println("\n\nPor favor incerte una opción correcta (S,N)");
             }
         }
     }

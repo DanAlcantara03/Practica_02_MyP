@@ -23,7 +23,7 @@ public class RestauranteMcBurguesas{
                 try{
                     System.out.print("Ingrese una opción: ");
                     opcion = Integer.parseInt(sc.nextLine());
-                    System.out.println("\n\n");
+                    System.out.println("\n");
                     break;
                 }catch(NumberFormatException e){
                     System.out.println("Por favor ingrese una opción válida.\n"
@@ -53,7 +53,7 @@ public class RestauranteMcBurguesas{
                 case 0:
                     break;
                 default:
-                    System.out.println("Por favor ingrese una instrucción valida.\n");
+                    System.out.println("\nPor favor ingrese una instrucción valida.\n");
                     break;
             }
         }while(opcion != 0);

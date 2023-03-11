@@ -18,9 +18,6 @@ public class Robot{
     private Hamburguesa pedido;
     /* Nos ayuda a saber si el robot llego a la mesa */
     private boolean llegoALaMesa;
-    /* Nos ayuda a saber si el robot ya recibio un pedido, y ademas ver si dicho
-    pedido es correcto*/
-    private boolean pedidoRecibido;
     /* Nos ayuda a saber si el robot termino de cocinar el Pedido */
     private boolean terminoPedido;
     /* Son los menus que puede llegar a tener el restaurante y que va poder leer el
@@ -115,15 +112,6 @@ public class Robot{
     }
 
     /**
-     * Metodo que nos ayuda a saber si el robot recibio el pedido correctamente.
-     * @return False si el pedido no esta en el menú o si no se ah ingresado ningún
-     * pedido, true en otro caso.
-     */
-    public boolean pedidoRecibido(){
-        return pedidoRecibido;
-    }
-
-    /**
      * Metodo que nos ayuda a saber si el robot termino el Pedido.
      * @return True si el robot termino el Pedido, False en otro caso.
      */
@@ -193,6 +181,14 @@ public class Robot{
     }
 
     /**
+     * Metodo que nos ayuda a comunicarle al robot que hemos terminado el 
+     * pedido del cliente.
+     */
+    public void setPedidoTerminado(){
+        terminoPedido = true;
+    }
+
+    /**
      * Metodo que nos ayuda a asignar un estado al robot.
      * @param estado El estado que se le quiere asignar al robot.
      */
@@ -233,7 +229,6 @@ public class Robot{
     private void inicializarParams(){
         pasos = 3;
         llegoALaMesa  = false;
-        pedidoRecibido = false;
         terminoPedido = false;
     }
 }

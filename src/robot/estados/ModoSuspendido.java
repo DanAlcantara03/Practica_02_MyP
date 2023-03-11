@@ -41,7 +41,7 @@ public class ModoSuspendido implements EstadoRobot{
      * que activar, y tiene que llegar a la mesa.
      */
     public void leerMenu(){
-        System.out.println(MensajesComunes.noPuede("leerMenu","suspendido"));
+        System.out.println(MensajesComunes.noPuede("leer el menu","suspendido"));
     }
 
     /**
@@ -59,7 +59,7 @@ public class ModoSuspendido implements EstadoRobot{
      * al cliente y cocinar el pedido.
      */
     public void entregarPedido(){
-        System.out.println(MensajesComunes.noPuede("Entregar el Pedido","suspendido"));
+        System.out.println(MensajesComunes.noPuede("entregar el pedido","suspendido"));
     }
 
     /**

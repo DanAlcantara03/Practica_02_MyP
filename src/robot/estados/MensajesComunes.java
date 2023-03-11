@@ -19,7 +19,7 @@ public class MensajesComunes {
     public static String noPuede(String noP, String modo){
         String msj = "";
         msj += "|#|#|#|#|#|#|#| MODO " + modo.toUpperCase() + " |#|#|#|#|#|#|#|\n";
-        msj += "El robot no puede " + noP + " mientras esta " + modo.toLowerCase() + ".\n";
+        msj += "El robot no puede " + noP.toLowerCase() + " mientras esta " + modo.toLowerCase() + ".\n";
         return msj;
     }
 

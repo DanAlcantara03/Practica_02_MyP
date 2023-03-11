@@ -31,7 +31,7 @@ public class ModoCocinar implements EstadoRobot{
      * El robot no puede cocinar mientras camina.
      */
     public void caminar(){
-        System.out.println(MensajesComunes.noPuede("caminar", "cocinar"));
+        System.out.println(MensajesComunes.noPuede("caminar", "cocinando"));
     }
 
     /**
@@ -39,7 +39,7 @@ public class ModoCocinar implements EstadoRobot{
      * un pedido que se le hizo con anterioridad.
      */
     public void leerMenu(){
-        System.out.println(MensajesComunes.noPuede("leer menu", "cocinar"));  
+        System.out.println(MensajesComunes.noPuede("leer menu", "cocinando"));  
     }
 
     /**
@@ -47,13 +47,14 @@ public class ModoCocinar implements EstadoRobot{
      */
     public void cocinarPedido(){
         Hamburguesa pedido = robot.getPedido();
-        System.out.println("################# Cocinando pedido. :) #################");
+        System.out.println("################# Cocinando pedido. :) #################\n");
         pedido.llevaQueso();
         for(String paso: pedido.mostrarPreparacion()){
-            System.out.println(paso);
-            try { Thread.sleep(2000); } catch (InterruptedException e){}
+            System.out.println(" -" + paso + "\n");
+            try { Thread.sleep(2340); } catch (InterruptedException e){}
         }
-        System.out.println("\n******* El robot esta pasando a modo atender cliente de nuevo. *******\n");
+        robot.setPedidoTerminado();
+        System.out.println("\n******* El robot esta pasando a modo atender cliente de nuevo. *******\n");        
         robot.asignarEstado(robot.getModoAtenderCliente());
     }
 
@@ -62,7 +63,7 @@ public class ModoCocinar implements EstadoRobot{
      * antes.
      */
     public void entregarPedido(){
-        System.out.println(MensajesComunes.noPuede("entregar pedido", "cocinar"));
+        System.out.println(MensajesComunes.noPuede("entregar pedido", "cocinando"));
     }
 
     /**
@@ -70,7 +71,7 @@ public class ModoCocinar implements EstadoRobot{
      * deberá terminar de cocinar y atender al cliente.
      */
     public void suspender(){
-        System.out.println(MensajesComunes.noPuede("suspender", "cocinar"));
+        System.out.println(MensajesComunes.noPuede("suspender", "cocinando"));
     }
 
 }

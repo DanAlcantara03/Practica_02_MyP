@@ -45,17 +45,21 @@ public class ModoAtenderCliente implements EstadoRobot{
      * restaurantes.
      */
     public void leerMenu(){
-        for(Menu menu: robot.getMenus()){
-            Iterator<Hamburguesa> hamb = menu.createIterator();
-            while(hamb.hasNext()){
-                System.out.println("------------------------------------------------------");
-                System.out.println("===============" + menu.getNombreMenu().toUpperCase() + "=================\n");
-                System.out.println(hamb.next().getHamburguesa());
+        if(robot.terminoPedido()){
+            System.out.println("El robot no puede leer el menú ya que tiene que entregar el pedido hecho anteriormente.");
+        }else{
+            for(Menu menu: robot.getMenus()){
+                Iterator<Hamburguesa> hamb = menu.createIterator();
+                    System.out.println("----------------------------------------------------------------------------------------------------------");
+                    System.out.println("================================" + menu.getNombreMenu().toUpperCase() + "==================================\n");
+                while(hamb.hasNext()){                
+                    System.out.println(hamb.next().getHamburguesa());
+                }
             }
+            insertarPedido();
+            System.out.println("\n******* El robot esta pasando, a modo cocinando. *******\n");
+            robot.asignarEstado(robot.getModoCocinar());
         }
-        insertarPedido();
-        System.out.println("\n******* El robot esta pasando, a modo cocinando. *******\n");
-        robot.asignarEstado(robot.getModoCocinar());
     }
 
     /**
@@ -70,6 +74,7 @@ public class ModoAtenderCliente implements EstadoRobot{
      */
     public void entregarPedido(){
         if(robot.terminoPedido()){
+            System.out.println("Aquí tiene su " + robot.getPedido().getNombre() + " que la disfrute. (: \n");
             System.out.println("\n******* El robot ah terminado el pedido y pasara a modo suspendido. *******\n");
             robot.asignarEstado(robot.getModoSuspender());
         }else{
@@ -81,7 +86,7 @@ public class ModoAtenderCliente implements EstadoRobot{
      * El robot no se puede suspender en este momento ya que se encuentra atendiendo al cliente.
      */
     public void suspender(){
-        System.out.println(MensajesComunes.noPuede("suspenderme", "atendiendo"));        
+        System.out.println(MensajesComunes.noPuede("suspenderse", "atendiendo"));
     }
 
     /**
