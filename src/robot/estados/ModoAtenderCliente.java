@@ -37,11 +37,10 @@ public class ModoAtenderCliente implements EstadoRobot{
      */
     public void caminar(){
         System.out.println(MensajesComunes.noPuede("caminar", "atendiendo"));
-        
     }
 
     /**
-     * Metodo que nos imprime en terminal todos los menus completos de los 
+     * Metodo que nos imprime en terminal todos los menus completos de los
      * restaurantes.
      */
     public void leerMenu(){
@@ -78,7 +77,7 @@ public class ModoAtenderCliente implements EstadoRobot{
             robot.asignarEstado(robot.getModoSuspender());
         }else{
             System.out.println("\nEl robot no puede entregar el pedido ya que no ah sido cocinado.\n");
-        }        
+        }
     }
 
     /**
