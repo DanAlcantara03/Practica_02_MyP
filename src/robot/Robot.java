@@ -47,6 +47,7 @@ public class Robot{
         modoAtenderCliente = new ModoAtenderCliente(this);
         modoCocinar = new ModoCocinar(this);
         /* Inicializamos y agregamos los menus a la lista de menus. */
+        menus = new ArrayList<Menu>();
         menus.add(new MenuHamburguesas());
         menus.add(new MenuDelDia());
         menus.add(new MenuEspecial());

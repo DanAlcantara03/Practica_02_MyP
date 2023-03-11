@@ -15,13 +15,15 @@ public class RestauranteMcBurguesas{
         /* Las opciones posibles que puede incertar el usuario */
         int opcion;
 
-        System.out.println("### Bienvenido al restaurante McBurguesas. ###"
-                        + "\nPor favor dele alguna instrucción al robot.\n");
+        System.out.println("############### Bienvenido al restaurante McBurguesas. ###############\n"
+                        + "\nPor favor dele alguna instrucción al robot.");
         do{
             System.out.println(robotRestaurante.robotOpciones());
             while(true){
                 try{
+                    System.out.print("Ingrese una opción: ");
                     opcion = Integer.parseInt(sc.nextLine());
+                    System.out.println("\n\n");
                     break;
                 }catch(NumberFormatException e){
                     System.out.println("Por favor ingrese una opción válida.\n"

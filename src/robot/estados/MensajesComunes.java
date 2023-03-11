@@ -16,10 +16,10 @@ public class MensajesComunes {
      * @return Un mensaje con una advertencia de que la acción noP no se puede
      * realizar en el estado modo.
      */
-    public static String noPuede(String modo, String noP){
+    public static String noPuede(String noP, String modo){
         String msj = "";
-        msj += "|#|#|#|#|#|#|#| MODO " + modo.toUpperCase() + "|#|#|#|#|#|#|#|\n";
-        msj += "El robot no puede " + noP + " mientras esta " + modo.toLowerCase() + ".\n\n";
+        msj += "|#|#|#|#|#|#|#| MODO " + modo.toUpperCase() + " |#|#|#|#|#|#|#|\n";
+        msj += "El robot no puede " + noP + " mientras esta " + modo.toLowerCase() + ".\n";
         return msj;
     }
 
