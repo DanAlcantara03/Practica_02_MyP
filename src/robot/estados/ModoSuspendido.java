@@ -24,6 +24,7 @@ public class ModoSuspendido implements EstadoRobot{
      * solo mientras está suspendido.
      */
     public void activar(){
+        System.out.println("\n******* El robot esta pasando a modo, caminar. *******\n");
         robot.asignarEstado(robot.getModoCaminar());
     }
 

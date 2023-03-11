@@ -23,6 +23,14 @@ public class MenuHamburguesas implements Menu{
         hamburguesas[2] = new HamburguesaOPM();
     }
 
+        /**
+     * Metodo que nos ayuda a saber como se llama el menú.
+     * @return nos regresa el nombre de este menú
+     */
+    public String getNombreMenu(){
+        return "Menu General.";
+    }
+
     /**
      * Metodo para poder obtener un nuevo iterador de todas las hamburguesas del menu,
      * cada que lo mandemos a llamar.

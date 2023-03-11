@@ -9,6 +9,9 @@ import robot.menus.hamburguesas.Hamburguesa;
  */
 public interface Menu {
     
+    /* String para saber como se llama el menu o de que es. */
+    public String getNombreMenu();
+
     /* El iterador del menu */
     public Iterator<Hamburguesa> createIterator();
 }

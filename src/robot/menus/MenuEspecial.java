@@ -22,7 +22,18 @@ public class MenuEspecial implements Menu{
         hamburguesasDeluxe.put(2003,new HamburguesaDeathNote());
     }
 
-    
+    /**
+     * Metodo que nos ayuda a saber como se llama el menú.
+     * @return nos regresa el nombre de este menú
+     */
+    public String getNombreMenu(){
+        return "Menu Especial";
+    }
+
+    /**
+     * Metodo para obtener el iterador de las hamburguesas
+     * @return El iterador de todas las hamburguesas
+     */    
     public Iterator<Hamburguesa> createIterator(){
         return hamburguesasDeluxe.values().iterator();
     }

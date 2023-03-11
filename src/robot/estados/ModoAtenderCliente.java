@@ -40,33 +40,42 @@ public class ModoAtenderCliente implements EstadoRobot{
     }
 
     /**
-     * 
-     * 
+     * Metodo que nos imprime en terminal todos los menus completos de los 
+     * restaurantes.
      */
     public void leerMenu(){
         for(Menu menu: robot.getMenus()){
-            Iterator<Hamburguesa> hamburguesas = menu.createIterator();
+            Iterator<Hamburguesa> hamb = menu.createIterator();
+            while(hamb.hasNext()){
+                System.out.println("------------------------------------------------------");
+                System.out.println("===============" + menu.getNombreMenu().toUpperCase() + "=================\n");
+                System.out.println(hamb.next().getHamburguesa());
+            }
         }
     }
 
     /**
-     * El robot no puede cocinar un platillo sin antes haber
-     * recibido un pedido.
+     * El robot no puede cocinar un platillo sin antes haber recibido un pedido.
      */
     public void cocinarPedido(){
         System.out.println(MensajesComunes.noPuede("cocinar", "atendiendo")); 
     }
 
     /**
-     * 
+     * El robot entrega el pedido si y solo si el pedido ya ah sido cocinado.
      */
     public void entregarPedido(){
-        //Aqui va tu codigo
+        if(robot.terminoPedido()){
+            System.out.println("\n******* El robot ah terminado el pedido y pasara a modo suspendido. *******\n");
+            robot.asignarEstado(robot.getModoSuspender());
+        }else{
+            System.out.println("\nEl robot no puede entregar el pedido ya que no ah sido cocinado.\n");
+        }
 
     }
 
     /**
-     *  El robot no se puede suspender en este momento ya que 
+     * El robot no se puede suspender en este momento ya que 
      * se encuentra atendiendo al cliente.
      */
     public void suspender(){

@@ -20,7 +20,18 @@ public class MenuDelDia implements Menu{
         hamburguesas.add(new HamburguesaSl());
     }
 
+    /**
+     * Metodo que nos ayuda a saber como se llama el menú.
+     * @return nos regresa el nombre de este menú
+     */
+    public String getNombreMenu(){
+        return "Menu del Dia";
+    }
 
+    /**
+     * Metodo para obtener el iterador de las hamburguesas
+     * @return El iterador de todas las hamburguesas
+     */
     public Iterator<Hamburguesa> createIterator(){
         return hamburguesas.iterator();
     }
