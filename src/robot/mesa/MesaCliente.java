@@ -60,6 +60,16 @@ public class MesaCliente{
             simularPausa(instActual.getDistancia());
         }
     }
+    
+    /**
+     * Metodo que nos ayuda a simular que el robot termino de atender al cliente, y 
+     * vuelve a su posición inicial
+     */
+    public void regresarPosicionInicial(){
+        iterator = instrucciones.iterator();
+        if(iterator.hasNext())
+            llego = false;
+    }
 
     /**
      * Metodo auxiliar para saber hacia donde va el robot y que distancia va a recorrer.
@@ -72,16 +82,6 @@ public class MesaCliente{
             rI += " El robot esta recorriendo " + (((double)inst.getDistancia())/100) + "m";
             rI += " hacia " + getDireccion(inst.getDireccion());
         return rI;
-    }
-    
-    /**
-     * Metodo que nos ayuda a simular que el robot termino de atender al cliente, y 
-     * vuelve a su posición inicial
-     */
-    public void regresarPosicionInicial(){
-        iterator = instrucciones.iterator();
-        if(iterator.hasNext())
-            llego = false;
     }
 
     /**

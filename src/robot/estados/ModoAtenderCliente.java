@@ -1,6 +1,10 @@
 package robot.estados;
 
+import java.util.Iterator;
+
 import robot.Robot;
+import robot.menus.Menu;
+import robot.menus.hamburguesas.Hamburguesa;
 
 /**
  * Clase que nos ayuda a representar el estado de un robot si llega
@@ -40,8 +44,9 @@ public class ModoAtenderCliente implements EstadoRobot{
      * 
      */
     public void leerMenu(){
-        //Aqui va tu codigo
-
+        for(Menu menu: robot.getMenus()){
+            Iterator<Hamburguesa> hamburguesas = menu.createIterator();
+        }
     }
 
     /**

@@ -22,8 +22,8 @@ public class HamburguesaSl extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
+        // Esto modificalo como quieras amor, solo es un ejemplo para que veas.
+        // como cual es mi idea de mostrar la preparación.
         return preparacion;
     }
 }

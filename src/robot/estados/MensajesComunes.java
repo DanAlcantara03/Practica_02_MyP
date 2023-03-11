@@ -19,7 +19,7 @@ public class MensajesComunes {
     public static String noPuede(String modo, String noP){
         String msj = "";
         msj += "|#|#|#|#|#|#|#| MODO " + modo.toUpperCase() + "|#|#|#|#|#|#|#|\n";
-        msj += "El robot no puede " + noP + " mientras esta " + modo.toLowerCase() + ".\n";
+        msj += "El robot no puede " + noP + " mientras esta " + modo.toLowerCase() + ".\n\n";
         return msj;
     }
 
@@ -33,7 +33,7 @@ public class MensajesComunes {
     public static String yaEsta(String modo ){
         String msj = "";
         msj += "|#|#|#|#|#|#|#|#| MODO " + modo.toUpperCase() + "|#|#|#|#|#|#|#|\n";
-        msj += "El robot ya esta " + modo.toLowerCase() + ".\n";
+        msj += "El robot ya esta " + modo.toLowerCase() + ".\n\n";
         return msj;
     }
 }

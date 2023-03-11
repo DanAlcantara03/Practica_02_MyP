@@ -31,7 +31,11 @@ public class ModoCaminar implements EstadoRobot{
      * para poder atenderlo.
      */
     public void caminar(){
-      //Aqui va tu codigo  
+        if(robot.llegoALaMesa()){
+            System.out.println("El robot ah llegado a la mesa, pasando al modo Atender Cliente.");
+            robot.asignarEstado(robot.getModoAtenderCliente());
+        }else
+            robot.avanzar();
     }
 
     /**
@@ -58,10 +62,11 @@ public class ModoCaminar implements EstadoRobot{
     }
 
     /**
-     *  
+     * El robot se puede suspender unicamente si esta caminando, y se suspende
+     * automaticamente ya que entrego el pedido
      */
     public void suspender(){
-        //Aqui va tu codigo
+        robot.asignarEstado(robot.getModoSuspender());
     }
 
 }

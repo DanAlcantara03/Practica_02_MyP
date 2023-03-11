@@ -38,7 +38,7 @@ public class ModoCocinar implements EstadoRobot{
      * un pedido que se le hizo con anterioridad.
      */
     public void leerMenu(){
-      System.out.println(MensajesComunes.noPuede("leer menu", "cocinar"));  
+        System.out.println(MensajesComunes.noPuede("leer menu", "cocinar"));  
     }
 
     /**

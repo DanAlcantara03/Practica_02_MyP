@@ -40,11 +40,15 @@ public class Robot{
         pedidoRecibido = false;
         terminoPedido = false;
         estadoActual = new ModoSuspendido(this);
-        /* Inicializamos todos los estados del robot con el propio robot */
+        /* Inicializamos todos los estados del robot con el propio robot. */
         modoSuspendido = new ModoSuspendido(this);
         modoCaminar = new ModoCaminar(this);
         modoAtenderCliente = new ModoAtenderCliente(this);
         modoCocinar = new ModoCocinar(this);
+        /* Inicializamos y agregamos los menus a la lista de menus. */
+        menus.add(new MenuHamburguesas());
+        menus.add(new MenuDelDia());
+        menus.add(new MenuEspecial());
     }
 
     /* Metodos con las acciones que puede realizar el robot en general */
@@ -157,6 +161,14 @@ public class Robot{
         return modoCocinar;
     }
 
+    /**
+     * Metodo getter para obtener los menus y poder leerselos al cliente.
+     * @return Los menus que tiene el robot.
+     */
+    public ArrayList<Menu> getMenus(){
+        return menus;
+    }
+
     /* Metodos auxiliares tanto para los estados como para el funcionamiento
     en general del robot. */
 
@@ -183,6 +195,14 @@ public class Robot{
      */
     public void asignarEstado(EstadoRobot estado){
         estadoActual = estado;
+    }
+
+    /**
+     * Metodo para que, cada vez el robot se acerque más a la mesa del cliente.
+     */
+    public void avanzar(){
+        mesa.acercarseAMesa();
+        llegoALaMesa = mesa.llego();
     }
 
     /**
