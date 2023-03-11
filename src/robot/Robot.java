@@ -3,8 +3,8 @@ package robot;
 import java.util.ArrayList;
 
 import robot.menus.*;
+import robot.menus.hamburguesas.Hamburguesa;
 import robot.estados.*;
-import robot.mesa.*;
 
 /**
  * Clase Robot que nos da un robot que hace de mesero y cocinero
@@ -12,8 +12,10 @@ import robot.mesa.*;
  */
 public class Robot{
 
-    /* Es la mesa del cliente a la que el robot tiene que ir */
-    private MesaCliente mesa;
+    /* Los pasos que tiene que dar el robot para llegr a la mesa del cliente. */
+    private int pasos;
+    /* Es el id del pedido que le han hecho al robot para que lo pueda cocinar. */
+    private Hamburguesa pedido;
     /* Nos ayuda a saber si el robot llego a la mesa */
     private boolean llegoALaMesa;
     /* Nos ayuda a saber si el robot ya recibio un pedido, y ademas ver si dicho
@@ -36,9 +38,8 @@ public class Robot{
      * Constructor que inicializa al robot y todos sus parametros.
      */
     public Robot(){
-        llegoALaMesa  = false;
-        pedidoRecibido = false;
-        terminoPedido = false;
+        /* Son los pasos que el robot tiene que dar para llegar a la mesa. */
+        inicializarParams();
         estadoActual = new ModoSuspendido(this);
         /* Inicializamos todos los estados del robot con el propio robot. */
         modoSuspendido = new ModoSuspendido(this);
@@ -134,6 +135,7 @@ public class Robot{
      * @return El estado de Suspendido del robot
      */
     public EstadoRobot getModoSuspender(){
+        inicializarParams();
         return modoSuspendido;
     }
 
@@ -169,24 +171,24 @@ public class Robot{
         return menus;
     }
 
+    /**
+     * Metodo getter para el pedido que le han hecho al robot.
+     * @return El pedido que incerta el usuario para que el robot 
+     * pueda cocinarlo
+     */
+    public Hamburguesa getPedido(){
+        return pedido;
+    }
+
     /* Metodos auxiliares tanto para los estados como para el funcionamiento
     en general del robot. */
 
     /**
-     * Metodo que esta pensado para usarse con el metodo activar en el estado
-     * suspendido, para que cuando el usuario active el robot, este le pueda incertar
-     * la mesa en la que quiere sentarse.
+     * Metodo para poner el id del Pedido en el robot
+     * @param idPedido El id del pedido que queremos poner
      */
-    public void recibirMesa(MesaCliente mesa){
-        this.mesa = mesa;
-    }
-
-    /**
-     * Metodo que nos regresa la Mesa que el cliente inserto al activar el robot.
-     * @return La mesa que el cliente puso.
-     */
-    public MesaCliente getMesaCliente(){
-        return mesa;
+    public void setPedido(Hamburguesa pedido){
+        this.pedido = pedido;
     }
 
     /**
@@ -198,11 +200,14 @@ public class Robot{
     }
 
     /**
-     * Metodo para que, cada vez el robot se acerque más a la mesa del cliente.
+     * Metodo para que simula, como cada vez el robot se acerca más a la mesa 
+     * del cliente.
      */
     public void avanzar(){
-        mesa.acercarseAMesa();
-        llegoALaMesa = mesa.llego();
+        if(pasos <= 0)
+            llegoALaMesa = true;
+        else
+            pasos--;
     }
 
     /**
@@ -210,7 +215,7 @@ public class Robot{
      * @return Un string con las acciones que puede realizar el robot.
      */
     public String robotOpciones(){
-        String menu = "";
+        String menu = "\n";
         menu += "1.- Activar.\n";
         menu += "2.- Caminar.\n";
         menu += "3.- Leer Menu.\n";
@@ -221,4 +226,13 @@ public class Robot{
         return menu;
     }
 
+    /**
+     * Metodo auxiliar para inicializar los pasos y otras variables
+     */
+    private void inicializarParams(){
+        pasos = 3;
+        llegoALaMesa  = false;
+        pedidoRecibido = false;
+        terminoPedido = false;
+    }
 }

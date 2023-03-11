@@ -1,6 +1,7 @@
 package robot.estados;
 
 import java.util.Iterator;
+import java.util.Scanner;
 
 import robot.Robot;
 import robot.menus.Menu;
@@ -52,13 +53,16 @@ public class ModoAtenderCliente implements EstadoRobot{
                 System.out.println(hamb.next().getHamburguesa());
             }
         }
+        insertarPedido();
+        System.out.println("\n******* El robot esta pasando, a modo cocinando. *******\n");
+        robot.asignarEstado(robot.getModoCocinar());
     }
 
     /**
      * El robot no puede cocinar un platillo sin antes haber recibido un pedido.
      */
     public void cocinarPedido(){
-        System.out.println(MensajesComunes.noPuede("cocinar", "atendiendo")); 
+        System.out.println(MensajesComunes.noPuede("cocinar", "atendiendo"));
     }
 
     /**
@@ -70,17 +74,50 @@ public class ModoAtenderCliente implements EstadoRobot{
             robot.asignarEstado(robot.getModoSuspender());
         }else{
             System.out.println("\nEl robot no puede entregar el pedido ya que no ah sido cocinado.\n");
-        }
-
+        }        
     }
 
     /**
-     * El robot no se puede suspender en este momento ya que 
-     * se encuentra atendiendo al cliente.
+     * El robot no se puede suspender en este momento ya que se encuentra atendiendo al cliente.
      */
     public void suspender(){
-        System.out.println(MensajesComunes.noPuede("suspenderme", "atendiendo"));
-        
+        System.out.println(MensajesComunes.noPuede("suspenderme", "atendiendo"));        
     }
 
+    /**
+     * Metodo auxiliar para saber si el id del pedido que ingreso el
+     * cliente es valido
+     * @param id El id del pedido que escogio el cliente.
+     * @return true si el id del pedido se encuentra dentro del menu, false
+     * en otro caso.
+     */
+    private Hamburguesa idValido(int id){
+        for(Menu menu: robot.getMenus()){
+            Iterator<Hamburguesa> hamb = menu.createIterator();
+            while(hamb.hasNext()){
+                Hamburguesa t = hamb.next();
+                if(t.getId() == id){
+                    return t;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Metodo auxliar que nos ayuda a que el cliente pueda insertar correctamente su pedido
+     */
+    private void insertarPedido(){
+        Scanner sc = new Scanner(System.in);
+        Hamburguesa t;
+        int id = 0;
+        do{
+            try{
+                System.out.println("\nPor favor inserte el id del pedido que quiere hacer del menu: ");
+                id = sc.nextInt();
+            }catch(NumberFormatException e){}
+            t = idValido(id);
+        }while( t == null);
+        robot.setPedido(t);
+    }
 }

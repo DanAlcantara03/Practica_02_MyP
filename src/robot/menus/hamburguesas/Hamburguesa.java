@@ -108,9 +108,9 @@ public abstract class Hamburguesa {
      * su Hamburguesa o no, o simplemente que diga que no lleva queso, ya que es
      * vegetariana.
      */
-    protected void llevaQueso(){
+    public void llevaQueso(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("\n ¿Quiéres queso en tu hamburguesa? (S,N): ");
+        System.out.println("\n Antes que nada, ¿Quiéres queso en tu hamburguesa? (S,N): ");
         String o = sc.nextLine();
         while(true){
             if(o.toUpperCase().equals("S")){

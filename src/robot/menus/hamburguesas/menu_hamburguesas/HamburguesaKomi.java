@@ -25,6 +25,8 @@ public class HamburguesaKomi extends Hamburguesa{
         preparacion.add("Calentando la carne");
         preparacion.add("Poniendo el pan base");
         preparacion.add("Poniendo la carne");
+        if(this.tieneQueso())
+            preparacion.add("Poniendo el queso");
         preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
         preparacion.add("Poniendo los pepinillos");

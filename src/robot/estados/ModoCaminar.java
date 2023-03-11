@@ -34,8 +34,10 @@ public class ModoCaminar implements EstadoRobot{
         if(robot.llegoALaMesa()){
             System.out.println("\n******* El robot ah llegado a la mesa, pasando al modo Atender Cliente. *******\n");
             robot.asignarEstado(robot.getModoAtenderCliente());
-        }else
+        }else{
+            System.out.println("\n******* El robot se esta acercando. *******\n");
             robot.avanzar();
+        }
     }
 
     /**

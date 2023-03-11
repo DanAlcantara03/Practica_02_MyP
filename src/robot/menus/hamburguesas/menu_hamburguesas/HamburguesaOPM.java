@@ -25,6 +25,8 @@ public class HamburguesaOPM extends Hamburguesa{
         preparacion.add("Calentando la extra carne");
         preparacion.add("Poniendo el pan base");
         preparacion.add("Poniendo la extra carne");
+        if(this.tieneQueso())
+            preparacion.add("Poniendo el queso");
         preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
         preparacion.add("Poniendo extra pepinillos");

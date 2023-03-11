@@ -1,6 +1,7 @@
 package robot.estados;
 
 import robot.Robot;
+import robot.menus.hamburguesas.Hamburguesa;
 
 /**
  * Clase que nos ayuda a representar el estado de un robot si llega
@@ -42,10 +43,18 @@ public class ModoCocinar implements EstadoRobot{
     }
 
     /**
-     * 
+     * Metodo que hace que podamos cocinar el pedido unicamente en este modo.
      */
     public void cocinarPedido(){
-        
+        Hamburguesa pedido = robot.getPedido();
+        System.out.println("################# Cocinando pedido. :) #################");
+        pedido.llevaQueso();
+        for(String paso: pedido.mostrarPreparacion()){
+            System.out.println(paso);
+            try { Thread.sleep(2000); } catch (InterruptedException e){}
+        }
+        System.out.println("\n******* El robot esta pasando a modo atender cliente de nuevo. *******\n");
+        robot.asignarEstado(robot.getModoAtenderCliente());
     }
 
     /**

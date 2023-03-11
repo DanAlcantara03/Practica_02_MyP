@@ -16,7 +16,7 @@ public class RestauranteMcBurguesas{
         int opcion;
 
         System.out.println("### Bienvenido al restaurante McBurguesas. ###"
-                        + "\nPor favor dele alguna instrucción al robot.");
+                        + "\nPor favor dele alguna instrucción al robot.\n");
         do{
             System.out.println(robotRestaurante.robotOpciones());
             while(true){

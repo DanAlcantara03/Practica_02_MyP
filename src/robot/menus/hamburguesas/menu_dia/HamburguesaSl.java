@@ -26,6 +26,8 @@ public class HamburguesaSl extends Hamburguesa{
         preparacion.add("Dibujando la estrella en el pan");
         preparacion.add("Poniendo el pan base");
         preparacion.add("Poniendo las dos carnes");
+        if(this.tieneQueso())
+            preparacion.add("Poniendo el queso");
         preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
         preparacion.add("Poniendo los pepinillos");

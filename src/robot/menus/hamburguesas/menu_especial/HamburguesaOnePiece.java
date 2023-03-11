@@ -29,6 +29,8 @@ public class HamburguesaOnePiece extends Hamburguesa{
         preparacion.add("Poniendo el pan base");
         preparacion.add("Poniendo la BBQ");
         preparacion.add("Poniendo las tres carnes");
+        if(this.tieneQueso())
+            preparacion.add("Poniendo el queso");
         preparacion.add("Poniendo los aros de cebolla");
         preparacion.add("Poniendo los tenders"); 
         preparacion.add("Poniendo el tocino");

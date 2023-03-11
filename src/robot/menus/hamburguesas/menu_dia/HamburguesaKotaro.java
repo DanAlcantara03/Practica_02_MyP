@@ -28,6 +28,8 @@ public class HamburguesaKotaro extends Hamburguesa{
         preparacion.add("Cortando los vegetales en forma de estella");
         preparacion.add("Poniendo el pan base");
         preparacion.add("Poniendo la carne");
+        if(this.tieneQueso())
+            preparacion.add("Poniendo el queso");
         preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
         preparacion.add("Poniendo los pepinillos");

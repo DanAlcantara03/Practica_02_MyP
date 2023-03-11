@@ -30,6 +30,8 @@ public class HamburguesaDeathNote extends Hamburguesa{
         preparacion.add("Poniendo la carne con extra mantequilla");
         preparacion.add("Poniendo la carne teriyaki");
         preparacion.add("Poniendo la carne de pollo empanizada");
+        if(this.tieneQueso())
+            preparacion.add("Poniendo el queso");
         preparacion.add("Poniendo la BBQ");
         preparacion.add("Poniendo el pan que cubre");
         return preparacion;
