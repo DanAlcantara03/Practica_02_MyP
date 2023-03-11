@@ -13,7 +13,7 @@ public class HamburguesaOPM extends Hamburguesa{
      */
     public HamburguesaOPM(){
         super(1002, "Hamburguesa One Punch Man", 
-        "Con una te basta - Pan brioche, catsup, mayonesa, mostaza, extra vegetales, extra carne y extra queso",
+        "Con una te basta - Pan brioche, catsup, mostaza, extra vegetales, extra carne",
         80, false);
     }
 
@@ -22,15 +22,15 @@ public class HamburguesaOPM extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
-        preparacion.add("Calentando el pan clásico");
-        preparacion.add("Calentando la carne");
+        preparacion.add("Calentando la extra carne");
         preparacion.add("Poniendo el pan base");
-        preparacion.add("Poniendo la carne");
-        preparacion.add("Poniendo la mayonesa");
-        preparacion.add("Poniendo el ketchup");
+        preparacion.add("Poniendo la extra carne");
+        preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
+        preparacion.add("Poniendo extra pepinillos");
+        preparacion.add("Poniendo extra cebolla");
+        preparacion.add("Poniendo extra lechuga");
+        preparacion.add("Poniendo extra tomate");
         preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }

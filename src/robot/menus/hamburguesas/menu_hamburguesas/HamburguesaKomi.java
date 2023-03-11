@@ -13,7 +13,7 @@ public class HamburguesaKomi extends Hamburguesa{
      */
     public HamburguesaKomi(){
         super(1001, "Hamburguesa Komi", 
-        "Te va a dejar sin palabras - Pan clásico, carne, catsup, mayonesa, mostaza",
+        "Te va a dejar sin palabras - Pan clásico, carne, catsup, mostaza, vegetales",
         40.50, false);
     }
 
@@ -22,15 +22,15 @@ public class HamburguesaKomi extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
-        preparacion.add("Calentando el pan clásico");
         preparacion.add("Calentando la carne");
         preparacion.add("Poniendo el pan base");
         preparacion.add("Poniendo la carne");
-        preparacion.add("Poniendo la mayonesa");
-        preparacion.add("Poniendo el ketchup");
+        preparacion.add("Poniendo la catsup");
         preparacion.add("Poniendo la mostaza");
+        preparacion.add("Poniendo los pepinillos");
+        preparacion.add("Poniendo la cebolla");
+        preparacion.add("Poniendo la lechuga");
+        preparacion.add("Poniendo el tomate");
         preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }

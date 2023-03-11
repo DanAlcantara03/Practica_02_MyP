@@ -13,7 +13,7 @@ public class HamburguesaKotaro extends Hamburguesa{
      */
     public HamburguesaKotaro(){
         super(3001, "Hamburguesa Kotaro", 
-        "Para niños– Pan de clasico, carne , catsup, mayonesa y vegetales, todo en forma de estrella",
+        "Para niños– Pan de clasico, carne , catsup, mostaza, vegetales, todo en forma de estrella",
         40.00, false);
     }
 
@@ -22,8 +22,19 @@ public class HamburguesaKotaro extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
+        preparacion.add("Calentando la carne");
+        preparacion.add("Cortando la carne en forma de estrella");
+        preparacion.add("Cortando los panes en forma de estrella"); 
+        preparacion.add("Cortando los vegetales en forma de estella");
+        preparacion.add("Poniendo el pan base");
+        preparacion.add("Poniendo la carne");
+        preparacion.add("Poniendo la catsup");
+        preparacion.add("Poniendo la mostaza");
+        preparacion.add("Poniendo los pepinillos");
+        preparacion.add("Poniendo la cebolla");
+        preparacion.add("Poniendo la lechuga");
+        preparacion.add("Poniendo el tomate");
+        preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }
 }

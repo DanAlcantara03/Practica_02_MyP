@@ -13,7 +13,7 @@ public class HamburguesaOnePiece extends Hamburguesa{
      */
     public HamburguesaOnePiece(){
         super(2001, "Hamburguesa One Piece", 
-        "Nunca te la podras terminar – Pan parrillero, triple carne, aros de cebolla, tenders, tocino, salsa BBQ, mayonesa y vegetales",
+        "Nunca te la podras terminar – Pan parrillero, triple carne, aros de cebolla, tenders, tocino, BBQ, vegetales",
         120.00, false);
     }
 
@@ -22,8 +22,21 @@ public class HamburguesaOnePiece extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
+        preparacion.add("Calentando las tres carnes carnes");
+        preparacion.add("Preparando los aros de cebolla");
+        preparacion.add("Preparando los tenders"); 
+        preparacion.add("Friendo el tocino");
+        preparacion.add("Poniendo el pan base");
+        preparacion.add("Poniendo la BBQ");
+        preparacion.add("Poniendo las tres carnes");
+        preparacion.add("Poniendo los aros de cebolla");
+        preparacion.add("Poniendo los tenders"); 
+        preparacion.add("Poniendo el tocino");
+        preparacion.add("Poniendo los pepinillos");
+        preparacion.add("Poniendo la cebolla");
+        preparacion.add("Poniendo la lechuga");
+        preparacion.add("Poniendo el tomate");
+        preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }
 }

@@ -22,8 +22,14 @@ public class HamburguesaEvangelion extends Hamburguesa{
      */
     @Override public LinkedList<String> mostrarPreparacion(){
         LinkedList<String> preparacion = new LinkedList<>();
-        // Esto modificalo como quieras amor, solo es un ejemplo para que veas
-        // como cual es mi idea de mostrar la preparación
+        preparacion.add("Calentando las zetas");
+        preparacion.add("Poniendo el pan base");
+        preparacion.add("Poniendo las zetas");
+        preparacion.add("Poniendo los pepinillos");
+        preparacion.add("Poniendo la cebolla");
+        preparacion.add("Poniendo la lechuga");
+        preparacion.add("Poniendo el tomate");
+        preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }
 
