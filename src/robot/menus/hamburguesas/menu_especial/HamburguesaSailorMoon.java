@@ -6,12 +6,12 @@ import robot.menus.hamburguesas.Hamburguesa;
 /**
  * Clase que modela una hamburguesa de tipo Sailor Moon.
  */
-public class HambrguesaSailorMoon extends Hamburguesa{
+public class HamburguesaSailorMoon extends Hamburguesa{
     
     /**
      * Constructor por defecto de la hamburguesa Sailor Moon.
      */
-    public HambrguesaSailorMoon(){
+    public HamburguesaSailorMoon(){
         super(2002, "Hamburguesa Sailor Moon", 
         "De otro mundo– Pan de colores, tofu , catsup, mayonesa, mostaza, vegetales",
         100.75, true);
@@ -25,5 +25,13 @@ public class HambrguesaSailorMoon extends Hamburguesa{
         // Esto modificalo como quieras amor, solo es un ejemplo para que veas
         // como cual es mi idea de mostrar la preparación
         return preparacion;
+    }
+
+    /**
+     * Metodo hook que nos pone por defecto que la hamburguesa no lleve queso,
+     * ya que es vegetariana.
+     */
+    @Override public void llevaQueso(){
+        this.tieneQueso = false;
     }
 }

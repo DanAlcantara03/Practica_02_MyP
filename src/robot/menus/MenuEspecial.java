@@ -2,8 +2,8 @@ package robot.menus;
 
 import java.util.Hashtable;
 import java.util.Iterator;
-
 import robot.menus.hamburguesas.Hamburguesa;
+import robot.menus.hamburguesas.menu_especial.*;
 
 /**
  * Clase que nos ayuda a obtener el menú especial del MCResutaurante
@@ -17,7 +17,9 @@ public class MenuEspecial implements Menu{
      * Constructor por defecto del menú especial.
      */
     public MenuEspecial() {
-        // Aqui vamos a inicialiar el menu con las hamburguesas del menu especial
+        hamburguesasDeluxe.put(2001,new HamburguesaOnePiece());
+        hamburguesasDeluxe.put(2002,new HamburguesaSailorMoon());
+        hamburguesasDeluxe.put(2003,new HamburguesaDeathNote());
     }
 
     

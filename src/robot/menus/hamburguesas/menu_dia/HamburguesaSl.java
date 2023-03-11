@@ -11,7 +11,7 @@ public class HamburguesaSl extends Hamburguesa{
     /**
      * Constructor por defecto de la hamburguesa Shen-Long.
      */
-    public HamburguesaSL(){
+    public HamburguesaSl(){
         super(3002, "Hamburguesa Shen-Long", 
         "Es tu deseo– Pan con una estrella grabada, doble carne, vegetales, catsup, mostaza y mayonesa",
         75.00, false);

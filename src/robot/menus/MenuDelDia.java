@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import robot.menus.hamburguesas.Hamburguesa;
+import robot.menus.hamburguesas.menu_dia.*;
 
 public class MenuDelDia implements Menu{
     
@@ -14,9 +15,9 @@ public class MenuDelDia implements Menu{
      * Constructor por defecto del menú del día.
      */
     public MenuDelDia(){
-        //Aqui se inicializan las hamburguesas y se agregan
-        // a la estructura de datos.
-        //Hamburguesa Hamburguesa_Komi = new Hamburguesa(0001,"Hamburguesa Komi");
+        hamburguesas.add(new HamburguesaEvangelion());
+        hamburguesas.add(new HamburguesaKotaro());
+        hamburguesas.add(new HamburguesaSl());
     }
 
 

@@ -13,7 +13,7 @@ public class HamburguesaOnePiece extends Hamburguesa{
      */
     public HamburguesaOnePiece(){
         super(2001, "Hamburguesa One Piece", 
-        "Nunca te la podras terminar – Pan parrillero, triple carne , aros de cebolla, tenders, tocino, salsa BBQ. mayonesa y vegetales",
+        "Nunca te la podras terminar – Pan parrillero, triple carne, aros de cebolla, tenders, tocino, salsa BBQ, mayonesa y vegetales",
         120.00, false);
     }
 

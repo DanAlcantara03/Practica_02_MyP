@@ -1,8 +1,8 @@
 package robot.menus;
 
-import robot.menus.hamburguesas.menu_hamburguesas.*;
 import java.util.Iterator;
 import robot.menus.hamburguesas.Hamburguesa;
+import robot.menus.hamburguesas.menu_hamburguesas.*;
 
 /**
  * Clase que representa el menu de hamburguesas de toda la vida del restaurante
@@ -10,15 +10,17 @@ import robot.menus.hamburguesas.Hamburguesa;
  */
 public class MenuHamburguesas implements Menu{
     
-    /* Es la estructura de datos en donde vamos a poner las hamburgesas que siempre 
+    /* Es la estructura de datos en donde vamos a poner las hamburgesas que siempre
     estan disponibles para el restaurante. */
-    private Hamburguesa[] hamburguesas;
+    private Hamburguesa[] hamburguesas = new Hamburguesa[3];
 
     /**
      * Constructor por defecto de las hamburgesas en general.
      */
     public MenuHamburguesas(){
-        //hamburguesas = {};
+        hamburguesas[0] = new HamburguesaKomi();
+        hamburguesas[1] = new HamburguesaNaruto();
+        hamburguesas[2] = new HamburguesaOPM();
     }
 
     /**
@@ -51,5 +53,4 @@ public class MenuHamburguesas implements Menu{
             return null;
         }
     }
-
 }

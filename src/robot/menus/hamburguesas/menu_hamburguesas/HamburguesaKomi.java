@@ -6,12 +6,12 @@ import robot.menus.hamburguesas.Hamburguesa;
 /**
  * Clase que modela una hamburguesa de tipo Komi.
  */
-public class HambrguesaKomi extends Hamburguesa{
+public class HamburguesaKomi extends Hamburguesa{
     
     /**
      * Constructor por defecto de la hamburguesa Komi.
      */
-    public HambrguesaKomi(){
+    public HamburguesaKomi(){
         super(1001, "Hamburguesa Komi", 
         "Te va a dejar sin palabras - Pan clásico, carne, catsup, mayonesa, mostaza",
         40.50, false);

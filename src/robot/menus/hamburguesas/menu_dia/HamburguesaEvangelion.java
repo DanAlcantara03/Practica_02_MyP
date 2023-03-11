@@ -26,4 +26,12 @@ public class HamburguesaEvangelion extends Hamburguesa{
         // como cual es mi idea de mostrar la preparación
         return preparacion;
     }
+
+    /**
+     * Metodo hook que nos pone por defecto que la hamburguesa no lleve queso,
+     * ya que es vegetariana.
+     */
+    @Override public void llevaQueso(){
+        this.tieneQueso = false;
+    }
 }

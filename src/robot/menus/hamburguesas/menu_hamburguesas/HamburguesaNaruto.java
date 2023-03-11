@@ -34,4 +34,12 @@ public class HamburguesaNaruto extends Hamburguesa{
         preparacion.add("Poniendo el pan que cubre");
         return preparacion;
     }
+
+    /**
+     * Metodo hook que nos pone por defecto que la hamburguesa no lleve queso,
+     * ya que es vegetariana.
+     */
+    @Override public void llevaQueso(){
+        this.tieneQueso = false;
+    }
 }

@@ -11,7 +11,7 @@ public class HamburguesaKotaro extends Hamburguesa{
     /**
      * Constructor por defecto de la hamburguesa Kotaro.
      */
-    public HambrguesKotaro(){
+    public HamburguesaKotaro(){
         super(3001, "Hamburguesa Kotaro", 
         "Para niños– Pan de clasico, carne , catsup, mayonesa y vegetales, todo en forma de estrella",
         40.00, false);
